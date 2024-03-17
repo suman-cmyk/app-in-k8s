@@ -1,0 +1,16 @@
+# If you are copying the source code directly into the NGINX image during the Docker build process,
+#  then you're correct that you don't need to mount any volumes to provide additional files during runtime.
+
+version: '3.8'
+
+services:
+  suman-app-eager:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8081:80"
+
+networks:
+  chorsua-network:
+    driver: bridge    

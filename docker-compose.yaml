@@ -1,0 +1,13 @@
+#USE THE BASE NGNIX IMAGE AND MOUNT THE CURRENT DIRECTORY TO PUT ALL THE SOURCE CODE THERE
+
+services:
+  suman-app-lazy:
+    image: nginx
+    ports:
+      - "8082:80"
+    volumes:
+      - ${PWD}:/usr/share/nginx/html/
+      
+networks:
+  chorsua-network:
+    driver: bridge        
